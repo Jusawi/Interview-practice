@@ -42,3 +42,6 @@ def is_balanced_helper(root):
         return -1
     # this tree is balanced, return its height
     return max(left_height, right_height) + 1
+
+def is_balanced(root):
+    return is_balanced_helper(root) > -1
