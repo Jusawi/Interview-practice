@@ -1,3 +1,6 @@
+#https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/discuss/158060/Python-DFS-tm
+#https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/discuss/65236/JavaPython-iterative-solution
+
 #USing Hashmaps and all (favorite method)
 
 def lowestCommonAncestor(self, root, p, q):
