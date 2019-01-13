@@ -1,3 +1,25 @@
+#USing Hashmaps and all (favorite method)
+
+def lowestCommonAncestor(self, root, p, q):
+    stack = [root]
+    parent = {root: None}
+    while p not in parent or q not in parent:
+        node = stack.pop()
+        if node.left:
+            parent[node.left] = node
+            stack.append(node.left)
+        if node.right:
+            parent[node.right] = node
+            stack.append(node.right)
+    ancestors = set()
+    while p:
+        ancestors.add(p)
+        p = parent[p]
+    while q not in ancestors:
+        q = parent[q]
+    return q
+
+
 #LCA in Binary SEarch Tree
 def lca(root, n1, n2): 
       
@@ -18,7 +40,7 @@ def lca(root, n1, n2):
     return root 
 
 #LCA in Binary tree
-
+#Arrays comparing method 
 '''Following is simple O(n) algorithm to find LCA of n1 and n2.
 1) Find path from root to n1 and store it in a vector or array.
 2) Find path from root to n2 and store it in another vector or array.
@@ -73,3 +95,19 @@ def findLCA(root, n1, n2):
         i += 1
     return path1[i-1] 
   
+      
+###########DFS METHOD
+class Solution(object):
+    def lowestCommonAncestor(self, root, p, q):
+        if not root: return None
+        if p == root or q == root:
+            return root
+        left = self.lowestCommonAncestor(root.left, p , q)
+        right = self.lowestCommonAncestor(root.right, p , q)
+        
+        if left and right:
+            return root
+        if not left:
+            return right
+        if not right:
+            return left
