@@ -1,3 +1,6 @@
+#start from the smallest array and move up to satisfy condiition
+#after fining the first range trim the left side 
+#repeat the process again and again and update res
 import collections
 astr = ["apple", "banana", "apple", "apple", "dog", "cat", "apple", "dog", "banana",
 "apple", "cat", "dog"]
