@@ -1,4 +1,7 @@
 #Simple Answer(General idea)
+#start from the smallest array and move up to satisfy condiition
+#after fining the first range trim the left side 
+#repeat the process again and again and update res
 class Solution:
     def minWindow(self, s, t):
         count=0
